@@ -1,0 +1,1447 @@
+/* ============================================================
+   Subpages — shared styles for all interior pages
+   Fonts, colours, and spacing tokens are inherited from style.css
+   ============================================================ */
+
+/* ── Section wrapper ────────────────────────────────────────── */
+.sp-section {
+  background: #fbf7f1;
+}
+
+/* ── Intro paragraph ────────────────────────────────────────── */
+.sp-intro {
+  font-size: 17px;
+  line-height: 1.85;
+  color: #4b5a68;
+  max-width: 820px;
+  margin-bottom: 52px;
+}
+
+/* ── Two-column layout (content + sidebar) ───────────────────── */
+.sp-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ── Content column ──────────────────────────────────────────── */
+.sp-content {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+/* Section heading inside content */
+.sp-content__section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: #14294a;
+  line-height: 1.2;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e7e0d3;
+  margin-bottom: 0;
+}
+
+/* ── Content block (a sub-heading + body grouped together) ───── */
+.sp-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sp-block__title {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #2f6fb0;
+  letter-spacing: 0.2px;
+}
+
+.sp-block__body {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #4b5a68;
+}
+
+.sp-block__list {
+  list-style: disc;
+  padding-left: 22px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #4b5a68;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* ── Problem / Solution cards (cosmetic & restorative pages) ─── */
+.sp-ps-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sp-ps-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e7e0d3;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sp-ps-card__title {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2f6fb0;
+}
+
+.sp-ps-card__text {
+  font-size: 15.5px;
+  color: #4b5a68;
+  line-height: 1.8;
+}
+
+/* ── FAQ format (pediatric dentistry) ───────────────────────── */
+.sp-faq {
+  display: flex;
+  flex-direction: column;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.sp-faq-item {
+  border-top: 1px solid #e7e0d3;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-faq-item:last-child {
+  border-bottom: 1px solid #e7e0d3;
+}
+
+.sp-faq-question {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #14294a;
+  line-height: 1.4;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.sp-faq-question::after {
+  content: '+';
+  font-size: 20px;
+  font-weight: 400;
+  color: #2f6fb0;
+  transition: transform 0.25s ease;
+  margin-left: 16px;
+  flex-shrink: 0;
+}
+
+.sp-faq-item.is-open .sp-faq-question::after {
+  content: '−';
+}
+
+.sp-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.25s cubic-bezier(0, 1, 0, 1), opacity 0.25s ease, margin-top 0.25s ease;
+  margin-top: 0;
+  font-size: 15.5px;
+  color: #4b5a68;
+  line-height: 1.75;
+}
+
+.sp-faq-item.is-open .sp-faq-answer {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 10px;
+  transition: max-height 0.25s ease-in, opacity 0.25s ease, margin-top 0.25s ease;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────── */
+.sp-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 110px;
+}
+
+/* Appointment CTA card */
+.sp-appt-card {
+  background: #14294a;
+  border-radius: 18px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sp-appt-card__eyebrow {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #9dc0e8;
+}
+
+.sp-appt-card__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.sp-appt-card__text {
+  font-size: 14.5px;
+  color: #a9bcd2;
+  line-height: 1.7;
+}
+
+.sp-appt-card .btn-banner-primary {
+  display: block;
+  text-align: center;
+  background: #2f6fb0;
+  color: #fff;
+  border-radius: 30px;
+  padding: 13px 20px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.sp-appt-card .btn-banner-primary:hover {
+  background: #1c4c80;
+  color: #fff;
+}
+
+.sp-appt-card__phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #cdd9e8;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.sp-appt-card__phone:hover {
+  color: #fff;
+}
+
+/* Hours info card */
+.sp-hours-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e7e0d3;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sp-hours-card__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #2f6fb0;
+}
+
+.sp-hours-card__row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sp-hours-card__row span {
+  font-size: 14.5px;
+  color: #4b5a68;
+  line-height: 1.5;
+}
+
+.sp-hours-card__address {
+  font-size: 14px;
+  color: #4b5a68;
+  line-height: 1.6;
+  padding-top: 8px;
+  border-top: 1px solid #f0ebe3;
+}
+
+.sp-hours-card__address a {
+  color: #2f6fb0;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.sp-hours-card__address a:hover {
+  color: #14294a;
+}
+
+/* ── Doctor bio layout ───────────────────────────────────────── */
+.sp-bio {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.sp-bio__photo-wrap {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px -20px #14294a33;
+  position: sticky;
+  top: 110px;
+}
+
+.sp-bio__photo {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.sp-bio__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sp-bio__specialty {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #2f6fb0;
+}
+
+.sp-bio__name {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: #14294a;
+  line-height: 1.12;
+}
+
+.sp-bio__text {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #4b5a68;
+}
+
+.sp-bio__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+}
+
+.sp-bio__btn-primary {
+  background: #14294a;
+  color: #fff;
+  border: 1px solid #14294a;
+  padding: 13px 26px;
+  border-radius: 30px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.sp-bio__btn-primary:hover {
+  background: #2f6fb0;
+  border-color: #2f6fb0;
+  color: #fff;
+}
+
+.sp-bio__btn-outline {
+  background: transparent;
+  color: #14294a;
+  border: 1px solid #d0cec9;
+  padding: 13px 26px;
+  border-radius: 30px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.sp-bio__btn-outline:hover {
+  border-color: #14294a;
+  color: #14294a;
+}
+
+/* ── Dental Services hub grid ────────────────────────────────── */
+.sp-services-intro {
+  font-size: 17px;
+  line-height: 1.85;
+  color: #4b5a68;
+  max-width: 720px;
+  margin: auto;
+  margin-bottom: 52px;
+  text-align: center;
+}
+
+.sp-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.sp-service-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 34px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 4px 28px -8px rgba(20, 41, 74, 0.09);
+  text-decoration: none;
+  transition: transform 0.22s, box-shadow 0.22s;
+  border: 1px solid #e7e0d3;
+}
+
+.sp-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 44px -8px rgba(20, 41, 74, 0.16);
+  border-color: #c9d8eb;
+}
+
+.sp-service-card__icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #eef5fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2f6fb0;
+  flex-shrink: 0;
+}
+
+.sp-service-card__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: #14294a;
+  line-height: 1.25;
+}
+
+.sp-service-card__sublist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+
+.sp-service-card__sublist li {
+  font-size: 13.5px;
+  color: #7f93aa;
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.sp-service-card__sublist li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: #2f6fb0;
+  font-weight: 700;
+}
+
+.sp-service-card__cta {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #2f6fb0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+}
+
+/* ── Hub image cards (dental-services & patient-center) ─────────── */
+.sp-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.sp-hub-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e7e0d3;
+  box-shadow: 0 2px 20px -6px rgba(20, 41, 74, 0.08);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+
+.sp-hub-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 44px -8px rgba(20, 41, 74, 0.16);
+  border-color: #c9d8eb;
+}
+
+/* Coloured gradient image header */
+.sp-hub-card__header {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sp-hub-card__header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.sp-hub-card:hover .sp-hub-card__header img {
+  transform: scale(1.04);
+}
+
+/* Gradient-colour fallback when no real image */
+.sp-hub-card__header--c1 {
+  background: linear-gradient(135deg, #0e2240 0%, #2f6fb0 100%);
+}
+
+.sp-hub-card__header--c2 {
+  background: linear-gradient(135deg, #1a3d6b 0%, #5a9fd4 100%);
+}
+
+.sp-hub-card__header--c3 {
+  background: linear-gradient(135deg, #14294a 0%, #3a82c4 100%);
+}
+
+.sp-hub-card__header--c4 {
+  background: linear-gradient(135deg, #0d1e38 0%, #2562a0 100%);
+}
+
+.sp-hub-card__header--c5 {
+  background: linear-gradient(135deg, #1e3f72 0%, #6aaede 100%);
+}
+
+.sp-hub-card__header--c6 {
+  background: linear-gradient(135deg, #112035 0%, #2f6fb0 100%);
+}
+
+.sp-hub-card__header-icon {
+  color: rgba(255, 255, 255, 0.85);
+  position: relative;
+  z-index: 1;
+}
+
+.sp-hub-card__header-icon svg {
+  width: 56px;
+  height: 56px;
+  stroke-width: 1.4;
+}
+
+.sp-hub-card__body {
+  padding: 26px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.sp-hub-card__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #14294a;
+  line-height: 1.25;
+}
+
+.sp-hub-card__text {
+  font-size: 14.5px;
+  color: #4b5a68;
+  line-height: 1.78;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.sp-hub-card__cta {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2f6fb0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+}
+
+.sp-hub-card:hover .sp-hub-card__cta {
+  color: #1c4c80;
+}
+
+/* ── Icon feature cards (service subpages) ────────────────────── */
+.sp-features {
+  background: #fff;
+  padding: 88px 0;
+}
+
+.sp-features--cream {
+  background: #fbf7f1;
+}
+
+.sp-features__header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.sp-features__eyebrow {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #2f6fb0;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.sp-features__heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: #14294a;
+  line-height: 1.2;
+}
+
+.sp-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.sp-icon-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.two_card .sp-icon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.sp-icon-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid #ece7df;
+  transition: box-shadow 0.22s, transform 0.22s;
+}
+
+.sp-icon-card:hover {
+  box-shadow: 0 12px 40px -10px rgba(20, 41, 74, 0.12);
+  transform: translateY(-3px);
+}
+
+.sp-features--white .sp-icon-card {
+  background: #fbf7f1;
+}
+
+.sp-icon-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #eef4fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2f6fb0;
+  flex-shrink: 0;
+}
+
+.sp-icon-card__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #14294a;
+  line-height: 1.2;
+}
+
+.sp-icon-card__text {
+  font-size: 15.5px;
+  color: #4b5a68;
+  line-height: 1.82;
+}
+
+/* ── Treatment card grid (old — cosmetic / restorative) ─────────── */
+
+/* ── Bottom CTA strip ────────────────────────────────────────── */
+.sp-cta-strip {
+  background: #2f6fb0;
+  padding: 72px 0;
+  text-align: center;
+}
+
+.sp-cta-strip .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.sp-cta-strip__eyebrow {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #c9aa70;
+}
+
+.sp-cta-strip__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+  max-width: 580px;
+}
+
+.sp-cta-strip__text {
+  font-size: 16px;
+  color: #a9bcd2;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.sp-cta-strip__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+/* ============================================================
+   Split-section layout — contained editorial style
+   Image sits inside an offset decorative frame; no full-bleed panels
+   ============================================================ */
+
+.sp-split-section {
+  background: #fbf7f1;
+  padding: 96px 0;
+}
+
+/* Alternating white background */
+.sp-split-section--alt {
+  background: #fff;
+}
+
+/* Navy variant: darken the whole section (overrides --alt) */
+.sp-split-section--navy,
+.sp-split-section:has(.sp-split-body--navy) {
+  background: #14294a;
+}
+
+/* Remove gap between consecutive split sections */
+.sp-split-section+.sp-split-section {
+  padding-top: 0;
+}
+
+.sp-split-row {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+/* Reverse row: flip flex direction */
+.sp-split-row--reverse {
+  flex-direction: row-reverse;
+}
+
+/* ── Image side ── */
+.sp-split-image {
+  flex: 0 0 46%;
+  position: relative;
+  /* room for the decorative offset box */
+  padding: 32px 0 0 32px;
+}
+
+/* Decorative offset background box (behind the photo) */
+.sp-split-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 88%;
+  background: #c9d8e8;
+  border-radius: 8px;
+  z-index: 0;
+}
+
+/* In reverse rows the box sits on the right */
+.sp-split-row--reverse .sp-split-image {
+  padding: 32px 32px 0 0;
+}
+
+.sp-split-row--reverse .sp-split-image::before {
+  left: auto;
+  right: 0;
+}
+
+.sp-split-image img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 24px 64px -16px rgba(20, 41, 74, 0.22);
+  transition: transform 0.55s ease;
+}
+
+.sp-split-image:hover img {
+  transform: scale(1.02);
+}
+
+/* ── Text / body side ── */
+.sp-split-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  background: none;
+  padding: 0;
+}
+
+.sp-split-body--cream {
+  /* no-op — section bg is cream */
+}
+
+/* Navy: tint text colours for the dark section */
+.sp-split-body--navy .sp-split-tag,
+.sp-split-section--navy .sp-split-tag {
+  color: #9dc0e8;
+}
+
+.sp-split-body--navy .sp-split-heading,
+.sp-split-section--navy .sp-split-heading {
+  color: #fff;
+}
+
+.sp-split-body--navy .sp-split-text,
+.sp-split-section--navy .sp-split-text {
+  color: #a9bcd2;
+}
+
+.sp-split-body--navy .sp-split-list li,
+.sp-split-section--navy .sp-split-list li {
+  color: #a9bcd2;
+}
+
+.sp-split-body--navy .sp-split-subheading,
+.sp-split-section--navy .sp-split-subheading {
+  color: #fff;
+}
+
+/* Offset box tint on navy sections */
+.sp-split-section:has(.sp-split-body--navy) .sp-split-image::before,
+.sp-split-section--navy .sp-split-image::before {
+  background: #0d1d35;
+}
+
+/* Tag above heading */
+.sp-split-tag {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #2f6fb0;
+}
+
+/* Main heading */
+.sp-split-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: #14294a;
+  line-height: 1.18;
+}
+
+/* Sub-heading inside a split body */
+.sp-split-subheading {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #2f6fb0;
+  margin-top: 4px;
+}
+
+/* Body text */
+.sp-split-text {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #4b5a68;
+}
+
+/* Bullet list with check marks */
+.sp-split-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sp-split-list li {
+  font-size: 15.5px;
+  color: #4b5a68;
+  line-height: 1.7;
+  padding-left: 24px;
+  position: relative;
+}
+
+.sp-split-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #2f6fb0;
+  font-weight: 700;
+  font-size: 14px;
+  top: 2px;
+}
+
+/* CTA link inside split body */
+.sp-split-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #2f6fb0;
+  color: #fff;
+  border-radius: 30px;
+  padding: 13px 26px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: background 0.2s;
+  margin-top: 6px;
+}
+
+.sp-split-cta:hover {
+  background: #1c4c80;
+  color: #fff;
+}
+
+.sp-split-cta--outline {
+  background: transparent;
+  border: 2px solid #2f6fb0;
+  color: #2f6fb0;
+}
+
+.sp-split-cta--outline:hover {
+  background: #2f6fb0;
+  color: #fff;
+}
+
+/* ── Intro hero strip (above splits) ─────────────────────────── */
+.sp-page-intro {
+  background: #fbf7f1;
+  padding: 64px 0 48px;
+  text-align: center;
+}
+
+.sp-page-intro__eyebrow {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #2f6fb0;
+  margin-bottom: 14px;
+}
+
+.sp-page-intro__text {
+  font-size: 17.5px;
+  line-height: 1.85;
+  color: #4b5a68;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* ── Treatment card grid (cosmetic / restorative) ─────────────── */
+.sp-treatments {
+  background: #fff;
+  padding: 80px 0;
+}
+
+.sp-treatments__heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: #14294a;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.sp-treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.sp-treatment-card {
+  border-radius: 18px;
+  border: 1px solid #e7e0d3;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  transition: box-shadow 0.22s, transform 0.22s;
+}
+
+.sp-treatment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px -12px rgba(20, 41, 74, 0.14);
+}
+
+.sp-treatment-card__accent {
+  height: 5px;
+  background: linear-gradient(90deg, #2f6fb0, #5a9fd4);
+}
+
+.sp-treatment-card__body {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.sp-treatment-card__num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #eef5fc;
+  color: #2f6fb0;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sp-treatment-card__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #14294a;
+  line-height: 1.2;
+}
+
+.sp-treatment-card__row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sp-treatment-card__label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #2f6fb0;
+}
+
+.sp-treatment-card__detail {
+  font-size: 14.5px;
+  color: #4b5a68;
+  line-height: 1.7;
+}
+
+/* ── FAQ grid (pediatric) ───────────────────────────────────── */
+.sp-faq-section {
+  background: #fbf7f1;
+  padding: 80px 0;
+}
+
+.sp-faq-section__heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: #14294a;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.sp-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #e7e0d3;
+  border: 1px solid #e7e0d3;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.sp-faq-cell {
+  background: #fff;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sp-faq-cell__q {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #14294a;
+  line-height: 1.4;
+}
+
+.sp-faq-cell__a {
+  font-size: 14.5px;
+  color: #4b5a68;
+  line-height: 1.7;
+}
+
+/* ── Accordion FAQ ─────────────────────────────────────────── */
+.sp-faq {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sp-faq-item {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e7e0d3;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.sp-faq-item:hover {
+  border-color: #2f6fb0;
+  box-shadow: 0 8px 24px rgba(20, 41, 74, 0.05);
+}
+
+.sp-faq-question {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #14294a;
+  padding: 24px 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  transition: color 0.25s ease;
+}
+
+.sp-faq-question::after {
+  content: '+';
+  font-family: 'Work Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #2f6fb0;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.sp-faq-item.is-open .sp-faq-question {
+  color: #2f6fb0;
+}
+
+.sp-faq-item.is-open .sp-faq-question::after {
+  content: '−';
+  transform: rotate(180deg);
+}
+
+.sp-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 30px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4b5a68;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+}
+
+.sp-faq-item.is-open .sp-faq-answer {
+  max-height: 400px;
+  padding: 0 30px 24px;
+}
+
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+
+  .sp-service-grid,
+  .sp-hub-grid,
+  .sp-treatment-grid,
+  .sp-icon-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sp-split-row {
+    gap: 52px;
+  }
+
+  .sp-split-heading {
+    font-size: 30px;
+  }
+
+  .sp-features__heading {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 991px) {
+
+  .sp-split-row,
+  .sp-split-row--reverse {
+    flex-direction: column;
+    gap: 0;
+    padding: 0 24px;
+  }
+
+  h1.page-banner__title.h1 {
+    font-size: 40px;
+  }
+
+  .sp-icon-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .sp-split-row {
+    gap: 40px;
+  }
+
+  .sp-split-image::before {
+    width: 75%;
+    height: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+
+
+  .sp-split-image {
+    flex: none;
+    width: 100%;
+    padding: 24px 0 0 24px;
+  }
+
+  .sp-split-row--reverse .sp-split-image {
+    padding: 24px 24px 0 0;
+  }
+
+  .sp-split-body {
+    padding: 40px 8px 0;
+  }
+
+  .sp-faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-treatment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sp-layout {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .sp-sidebar {
+    position: static;
+  }
+
+  .sp-bio {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .sp-bio__photo-wrap {
+    position: static;
+    max-width: 380px;
+  }
+
+  .sp-bio__photo {
+    height: 360px;
+  }
+
+  .sp-bio__name {
+    font-size: 34px;
+  }
+
+  .sp-cta-strip__title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .sp-faq-section,
+  .sp-split-section {
+    padding: 64px 0;
+  }
+
+  .sp-split-heading {
+    font-size: 26px;
+  }
+
+  .sp-split-image {
+    padding: 18px 0 0 18px;
+  }
+
+  .sp-split-row--reverse .sp-split-image {
+    padding: 18px 18px 0 0;
+  }
+
+  .sp-treatment-grid,
+  .sp-icon-grid,
+  .sp-icon-grid--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-treatments__heading,
+  .sp-faq-section__heading,
+  .sp-features__heading {
+    font-size: 26px;
+  }
+
+  .sp-features {
+    padding: 60px 0;
+  }
+
+  .sp-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-bio__name {
+    font-size: 28px;
+  }
+
+  .sp-bio__photo {
+    height: 300px;
+  }
+
+  .sp-content__section-title {
+    font-size: 24px;
+  }
+
+  .sp-cta-strip {
+    padding: 56px 0;
+  }
+
+  .sp-cta-strip__title {
+    font-size: 26px;
+  }
+
+  .sp-bio__actions {
+    flex-direction: column;
+  }
+
+  .sp-bio__btn-primary,
+  .sp-bio__btn-outline {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (max-width: 680px) {
+  h1.page-banner__title.h1 {
+    font-size: 30px;
+  }
+
+  .sp-hub-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-icon-grid {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  .sp-icon-card {
+    padding: 36px 22px;
+  }
+
+}
+
+@media (max-width: 575px) {
+
+  .btn-banner-outline,
+  .btn-banner-primary {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  a.sp-split-cta {
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sp-cta-strip__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sp-cta-strip__actions .btn-banner-primary,
+  .sp-cta-strip__actions .btn-banner-outline {
+    display: block;
+    text-align: center;
+  }
+}

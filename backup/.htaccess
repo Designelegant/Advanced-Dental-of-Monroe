@@ -1,0 +1,16 @@
+Options -Indexes
+RewriteEngine On
+
+# Serve existing files and directories directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Rewrite /page-slug.html → /page-slug.php
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+RewriteRule ^(.+)\.html$ $1.php [L,QSA]
+
+# Strip .php extension: /page-slug → /page-slug.php
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [L,QSA]
+
